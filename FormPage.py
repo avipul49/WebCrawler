@@ -20,20 +20,18 @@ class FormPage(object):
         now = datetime.datetime.now()
         amonths = (int(ad[2]) - int(dd[2]))*12 + int(ad[0]) - int(dd[0])
         dmonths = (int(dd[2]) - now.year)*12 + int(dd[0]) - now.month
-        #find_by_xpath('//span[text() = "One-way"]').click()
         self.find_by_xpath('//input[@name = "from_field"]').send_keys(data['from'])
         self.find_by_xpath('//a[@rel = "'+data['from']+'"]').click()       
-        # self.find_by_xpath('//a[text() = "'+data['from_name']+'"]').click()
         self.find_by_xpath('//input[@name = "to_field"]').send_keys(data['to'])
         self.find_by_xpath('//a[@rel = "'+data['to']+'"]').click()       
-        #self.find_by_xpath('//a[text() = "'+data['to_name']+'"]').click()
         self.find_by_xpath('//span[text() = "Depart date"]').click()
+
         for x in range(0, dmonths):
             self.find_by_xpath('//a[@title = "Next"]').click()
 
         self.find_by_xpath('//a[text() = "'+dd[1]+'"]').click()
-        #find_by_xpath('//span[@id = "return-wrap"]').click()
-        time.sleep(5);
+        time.sleep(3);
+
         for x in range(0, amonths):
             self.find_by_xpath('//div[@id="return-cal"]//a[@title = "Next"]').click()
 
