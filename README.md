@@ -26,7 +26,7 @@ while loop > 0:
     time.sleep(timeInterval)
 ```
 
-In above code variables `loop` and `timeInterval`can be changed to run the script repeatedly after specified time interval.  
+In the above code, variables `loop` and `timeInterval`can be changed to run the script repeatedly after specified time interval.  
 
 Variable `data` contains the search quesry in which fields `from`, `to`, `departure_day` and `arrive_day` can be changed.
 
