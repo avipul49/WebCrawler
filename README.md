@@ -21,7 +21,7 @@ while loop > 0:
     allFlights = ResultPage.ResultPage(driver).collectSearchResult(data);
     
     CSVHelper.writeToCSV(allFlights)
-    #driver.quit() 
+    driver.quit() 
     loop = loop - 1
     time.sleep(timeInterval)
 ```
