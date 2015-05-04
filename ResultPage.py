@@ -11,7 +11,6 @@ class ResultPage(object):
         self.driver = driver
 
     def collectSearchResult(self, data):
-        elements = self.driver.find_elements_by_css_selector('.origin-'+data['from_field'])
         fromTimes = self.driver.find_elements_by_xpath('//div[@class = "from"]//time')
         toTimes = self.driver.find_elements_by_xpath('//div[@class = "to"]//time')
         fromAirports = self.driver.find_elements_by_xpath('//div[@class = "from"]//span')
@@ -24,9 +23,9 @@ class ResultPage(object):
         allFlights = []
         ddate = ''
         for fromTime in fromTimes: 
-            if data['from_field'] == fromAirports[i].get_attribute('innerHTML').strip():
+            if data['from'] == fromAirports[i].get_attribute('innerHTML').strip():
                 ddate = data['departure_day']
-            if data['to_field'] == toAirports[i].get_attribute('innerHTML').strip():
+            if data['to'] == fromAirports[i].get_attribute('innerHTML').strip():
                 ddate = data['arrive_day']
 
             flight = Flight.Flight()
@@ -40,7 +39,7 @@ class ResultPage(object):
             flight.lowestPrice = 0
             flight.points = '0'
             flight.extraCharges = '0'
-            if data['from_field'] == toAirports[i].get_attribute('innerHTML').strip() or data['to_field'] == toAirports[i].get_attribute('innerHTML').strip():
+            if data['from'] == toAirports[i].get_attribute('innerHTML').strip() or data['to'] == toAirports[i].get_attribute('innerHTML').strip():
                 charges = points[j].get_attribute('innerHTML').strip().split('<br>')
                 flight.points = charges[0].replace('pts','').strip()
                 flight.extraCharges = charges[1].strip()
