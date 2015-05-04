@@ -46,7 +46,7 @@ class ResultPage(object):
                 j = j + 1
             allFlights.append(flight) 
             i = i + 1
-
+        time.sleep(5)
         self.driver.find_element_by_xpath('//span[text() = "Dollars"]').click()
         time.sleep(10)
         prices = self.driver.find_elements_by_xpath('//div[@class = "radio price"]//span[@class = "label"]')

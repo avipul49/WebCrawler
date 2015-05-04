@@ -7,10 +7,11 @@ import FormPage
 import Flight
 import ResultPage
 import CSVHelper
-loop = 3 # do it 3 times
-timeInterval = 10 # run in 
+loop = 1 # do it 3 times
+timeInterval = 10 # run in every 10 sec
 while loop > 0:
     driver = webdriver.Firefox()
+    #driver = webdriver.PhantomJS()
     driver.get("http://www.jetblue.com/")
 
     data = {
