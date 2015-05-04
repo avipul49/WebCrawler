@@ -30,6 +30,8 @@ In above code variables `loop` and `timeInterval`can be changed to run the scrip
 
 Variable `data` contains the search quesry in which fields `from`, `to`, `departure_day` and `arrive_day` can be changed.
 
+Once done with the update, run `Crawler.py`
+
 ## Result
 The result from each run of the script will be store in a file named `flightDetails_MM-DD-YYYY_HH:mm.csv`. 
 In the flight list `points` and `lowestPrice` for connecting flights is in the last flight and rest of the flights will have `0` as the value for these fields.
