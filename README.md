@@ -34,5 +34,5 @@ Once done with the update, run `Crawler.py`
 
 ## Result
 The result from each run of the script will be store in a file named `flightDetails_MM-DD-YYYY_HH:mm.csv`. 
-In the flight list `points` and `lowestPrice` for connecting flights is in the last flight and rest of the flights will have `0` as the value for these fields.
+In the flight list, `points` and `lowestPrice` for connecting flights is stored against the last flight and rest of the flights will have `0` as the value for these fields.
 
