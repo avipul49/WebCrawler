@@ -5,7 +5,7 @@ Open Crawler.py and update search fields
 
 ```(Python)
 loop = 3 # do it 3 times
-timeInterval = 10 # run in 
+timeInterval = 10 # # run in every 10 sec 
 while loop > 0:
     driver = webdriver.Firefox()
     driver.get("http://www.jetblue.com/")
