@@ -5,7 +5,7 @@ import datetime
 def writeToCSV(allFlights):
 	now = datetime.datetime.now()
 	fileName = now.strftime("%m-%d-%Y_%H:%M")
-	with open('flightDetails_'+fileName+'.csv', 'wb') as csvfile:
+	with open('flightDetails_'+fileName+'.csv', 'w', newline='') as csvfile:
 	    fieldnames = ['fromDate', 'toDate','fromTime','toTime','fromAirport','toAirport','flightNumber','points','lowestPrice','extraCharges']
 	    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	    writer.writeheader()
